@@ -1,4 +1,13 @@
-require "extensions/views"
+require 'extensions/views'
+
+activate :blog do |blog|
+  blog.prefix = 'docs'
+  blog.permalink = "{title}"
+  blog.taglink = "tags/{tag}.html"
+  blog.tag_template = "docs/tags/tag.html"
+  blog.layout = "posts"
+  blog.summary_length = 200
+end
 
 activate :views
 activate :directory_indexes
@@ -8,7 +17,6 @@ set :css_dir, 'assets/stylesheets'
 set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 set :fonts_dir, 'assets/fonts'
-set :layout, 'layouts/application'
 
 configure :development do
  activate :livereload
@@ -20,6 +28,7 @@ configure :build do
 end
 
 activate :deploy do |deploy|
+  deploy.branch = :master
   deploy.build_before = true
   deploy.method = :git
 end
