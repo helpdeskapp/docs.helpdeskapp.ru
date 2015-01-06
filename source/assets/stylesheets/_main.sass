@@ -1,5 +1,5 @@
 body
-  background: #fff
+  background: #2c3f50
   color: #222
 
 .navbar
@@ -113,6 +113,10 @@ body
   h2
     color: #262626
     font-size: 24px
+    font-weight: 300
+
+  h4
+    margin: 20px 0
 
   ul
     font-size: 18px
@@ -120,9 +124,11 @@ body
     li
       line-height: 28px
 
-.sidebar
-  background: #2c3f50
+.main
+  background: #fff
+  padding: 0 40px
 
+.sidebar
   .navigation
     color: #fff
     margin: 20px
@@ -134,7 +140,6 @@ body
     margin: 0 0 0 20px
 
 .footer
-  background: #2c3f50
   color: #eee
   font-size: 16px
   height: 90px
@@ -146,6 +151,43 @@ body
 
   a
     color: #eee
+
+.more
+  font-size: 15px
+  margin: 15px 0
+
+  a
+    +border-radius(3px)
+    +transition(all 0.2s ease-in-out)
+    border: 1px solid #306cbb
+    padding: 5px 10px
+
+    &:hover
+      background: #306cbb
+      color: #fff
+      text-decoration: none
+
+.tags
+
+  li
+    +border-radius(2px)
+    +inline-block
+    background: #999
+    font-size: 12px
+    line-height: 22px
+    margin: 0 3px 0 0
+    padding: 0 5px
+
+    &:hover
+      background: #bbb
+      cursor: pointer
+
+    a
+      color: #fff
+
+      &:hover
+        text-decoration: none
+
 
 @media (max-width: $screen-sm-max)
   .navbar-public
