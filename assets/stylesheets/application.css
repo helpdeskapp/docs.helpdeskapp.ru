@@ -7447,7 +7447,16 @@ body {
 /* line 2, /Users/tab/projects/docs.helpdeskapp.ru/source/assets/stylesheets/_docs.sass */
 .post > .content p {
   font-size: 16px; }
-/* line 5, /Users/tab/projects/docs.helpdeskapp.ru/source/assets/stylesheets/_docs.sass */
+/* line 6, /Users/tab/projects/docs.helpdeskapp.ru/source/assets/stylesheets/_docs.sass */
+.post > .content .with-images img {
+  display: block; }
+/* line 9, /Users/tab/projects/docs.helpdeskapp.ru/source/assets/stylesheets/_docs.sass */
+.post > .content .with-images em {
+  color: #999;
+  display: block;
+  font-size: 14px;
+  margin: 10px 0; }
+/* line 15, /Users/tab/projects/docs.helpdeskapp.ru/source/assets/stylesheets/_docs.sass */
 .post > .content em {
   font-style: italic; }
 
