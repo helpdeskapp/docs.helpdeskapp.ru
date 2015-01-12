@@ -7,8 +7,19 @@ directory_index: false
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://docs.helpdeskapp.ru/</loc>
-    <lastmod>2015-01-06</lastmod>
+    <lastmod><%= I18n.l(Time.now, :format => "%Y-%m-%d") %></lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <% sitemap.resources.find_all{ |p| puts p.source_file; p.source_file.match(/\.md/) if p.source_file }.each do |p| %>
+    <% location = p.destination_path.gsub('/index.html','') %>
+    <% unless location == 'index.html' %>
+  <url>
+    <loc>http://docs.helpdeskapp.ru/<%= location.to_s %></loc>
+    <lastmod><%= I18n.l(Time.now, :format => "%Y-%m-%d") %></lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+    <% end %>
+  <% end %>
 </urlset>
